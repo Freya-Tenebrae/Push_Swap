@@ -1,4 +1,4 @@
-# ft_printf
+# Push_Swap
 
 Ce dépôt contiens ma solution au projet `Push_swap` de 42 (Paris).
 
