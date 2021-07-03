@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 13:09:35 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/07/03 13:28:40 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/03 13:53:48 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,11 @@
 /* ************************************************************************** */
 /*                                  TYPEDEF                                   */
 /* ************************************************************************** */
-
+typedef struct s_stacks
+{
+	int				content;
+	struct s_stacks	*next;
+}	t_stacks;
 /* ************************************************************************** */
 /*                                 MAIN PART                                  */
 /* ************************************************************************** */
@@ -28,13 +32,10 @@ int	main(int argc, const char **argv);
 /* ************************************************************************** */
 /*                                   TOOLS                                    */
 /* ************************************************************************** */
-int	ft_swap(int ***staks, char stack_letter);
-int	ft_s_swap(int ***staks);
-int	ft_push(int ***staks, char stack_letter);
-int	ft_rotate(int ***staks, char stack_letter);
-int	ft_r_rotate(int ***staks);
-int	ft_reverse_rotate(int ***staks, char stack_letter);
-int	ft_r_rreverse_rotate(int ***staks);
-
+int	ft_push(t_stacks **stack_a, t_stacks **stack_b, char stack_letter);
+int	ft_rotate(t_stacks **stack_a, t_stacks **stack_b, char stack_letter);
+int	ft_reverse_rotate(t_stacks **stack_a, t_stacks **stack_b, \
+	char stack_letter);
+int	ft_swap(t_stacks **stack_a, t_stacks **stack_b, char stack_letter);
 
 #endif
