@@ -7,3 +7,31 @@ This Repositorie contains my solution to the project `Push_swap` of 42 (Paris).
 [![jaeskim's 42 stats](https://badge42.herokuapp.com/api/stats/cmaginot?cursus=42cursus&privacyName=true)](https://github.com/JaeSeoKim/badge42)
 
 [![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/cmaginot/push_swap)](https://github.com/JaeSeoKim/badge42)
+
+## Exemple of Uses
+
+```shell
+./push_swap 1 2 3 4 five 6 8 7
+Error
+```
+```shell
+./push_swap 1 2 3 4 5 6 8 8
+Error
+```
+```shell
+./push_swap 1 3 5 2 6 4
+PUSH_SWAP_STATES : sorting algo need to be done
+```
+
+## Avancement / Advancement
+
+- [x] tools (push, swap, rotate, reverse rotate)
+- [x] error management (is not a int, same number twice)
+- [ ] error management (over int max or under int min)
+- [ ] error management (negative number OK or not ?)
+- [ ] sorting algo
+- [ ] bonus (checker)
+
+## Tester :
+
+- [ ] Need to found tester
