@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 13:09:07 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/07/08 13:49:28 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/08 14:00:40 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ static int	ft_check_is_all_num(int argc, const char **argv)
 	while (++i < argc)
 	{
 		len = ft_strlen(argv[i]);
-		while (--len >= 0)
+		if ((argv[i])[0] != '-' && ft_isdigit((argv[i])[0]) == 0)
+		while (--len > 0)
 		{
 			if (ft_isdigit((argv[i])[len]) == 0)
 				return (-1);
@@ -72,39 +73,6 @@ static int	ft_check_is_unique(t_stacks *stack_a)
 	return (0);
 }
 
-static void	ft_push_swap(t_stacks **stack_a, t_stacks **stack_b)
-{
-	ft_print_stack(*stack_a, *stack_b);
-	ft_push(stack_a, stack_b, 'b');
-	ft_print_stack(*stack_a, *stack_b);
-	ft_push(stack_a, stack_b, 'b');
-	ft_print_stack(*stack_a, *stack_b);
-	ft_push(stack_a, stack_b, 'a');
-	ft_print_stack(*stack_a, *stack_b);
-	ft_push(stack_a, stack_b, 'b');
-	ft_print_stack(*stack_a, *stack_b);
-	ft_swap(stack_a, stack_b, 'a');
-	ft_print_stack(*stack_a, *stack_b);
-	ft_swap(stack_a, stack_b, 'b');
-	ft_print_stack(*stack_a, *stack_b);
-	ft_swap(stack_a, stack_b, 'c');
-	ft_print_stack(*stack_a, *stack_b);
-	ft_rotate(stack_a, stack_b, 'a');
-	ft_print_stack(*stack_a, *stack_b);
-	ft_rotate(stack_a, stack_b, 'b');
-	ft_print_stack(*stack_a, *stack_b);
-	ft_rotate(stack_a, stack_b, 'c');
-	ft_print_stack(*stack_a, *stack_b);
-	ft_reverse_rotate(stack_a, stack_b, 'a');
-	ft_print_stack(*stack_a, *stack_b);
-	ft_reverse_rotate(stack_a, stack_b, 'b');
-	ft_print_stack(*stack_a, *stack_b);
-	ft_reverse_rotate(stack_a, stack_b, 'c');
-	ft_print_stack(*stack_a, *stack_b);
-	ft_putstr_fd("\n\n\n", 0);
-	ft_putstr_fd("PUSH_SWAP_STATES : sorting algo need to be done\n", 1);
-}
-
 int	main(int argc, const char **argv)
 {
 	t_stacks	*stack_a;
@@ -126,7 +94,7 @@ int	main(int argc, const char **argv)
 		ft_stack_clear(&stack_a);
 		return (-1);
 	}
-	ft_push_swap(&stack_a, &stack_b);
+	ft_push_swap(&stack_a, &stack_b, argc - 1);
 	ft_stack_clear(&stack_a);
 	return (0);
 }

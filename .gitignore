@@ -2,3 +2,5 @@
 *.o
 .DS_Store
 push_swap
+push_swap_tester
+checker

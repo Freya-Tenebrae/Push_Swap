@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 13:09:35 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/07/08 12:33:16 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/08 14:00:11 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,12 @@ typedef struct s_stacks
 /*                                 MAIN PART                                  */
 /* ************************************************************************** */
 int					main(int argc, const char **argv);
+void				ft_push_swap(t_stacks **stack_a, t_stacks **stack_b, \
+						int size);
 /* ************************************************************************** */
 /*                                   TOOLS                                    */
 /* ************************************************************************** */
+/* ***************************** Sorting Tools ****************************** */
 int					ft_push(t_stacks **stack_a, t_stacks **stack_b, \
 						char stack_letter);
 int					ft_rotate(t_stacks **stack_a, t_stacks **stack_b, \
@@ -40,6 +43,7 @@ int					ft_reverse_rotate(t_stacks **stack_a, t_stacks **stack_b, \
 						char stack_letter);
 int					ft_swap(t_stacks **stack_a, t_stacks **stack_b, \
 						char stack_letter);
+/* ****************************** Other Tools ******************************* */
 void				ft_print_stack(t_stacks *stack_a, t_stacks *stack_b);
 t_stacks			*ft_stack_new(int content);
 void				ft_stack_clear(t_stacks **stack);

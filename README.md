@@ -26,9 +26,8 @@ PUSH_SWAP_STATES : sorting algo need to be done
 ## Avancement / Advancement
 
 - [x] tools (push, swap, rotate, reverse rotate)
-- [x] error management (is not a int, same number twice)
+- [x] error management (is not a int, same number twice, and if negative number are OK)
 - [ ] error management (over int max or under int min)
-- [ ] error management (negative number OK or not ?)
 - [ ] sorting algo
 - [ ] bonus (checker)
 
