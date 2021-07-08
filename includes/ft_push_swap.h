@@ -15,6 +15,7 @@
 /* ************************************************************************** */
 /*                                  INCLUDES                                  */
 /* ************************************************************************** */
+# include <unistd.h>
 # include "../libft/libft.h"
 /* ************************************************************************** */
 /*                                  TYPEDEF                                   */
@@ -23,19 +24,25 @@ typedef struct s_stacks
 {
 	int				content;
 	struct s_stacks	*next;
-}	t_stacks;
+}					t_stacks;
 /* ************************************************************************** */
 /*                                 MAIN PART                                  */
 /* ************************************************************************** */
-int	main(int argc, const char **argv);
-
+int					main(int argc, const char **argv);
 /* ************************************************************************** */
 /*                                   TOOLS                                    */
 /* ************************************************************************** */
-int	ft_push(t_stacks **stack_a, t_stacks **stack_b, char stack_letter);
-int	ft_rotate(t_stacks **stack_a, t_stacks **stack_b, char stack_letter);
-int	ft_reverse_rotate(t_stacks **stack_a, t_stacks **stack_b, \
-	char stack_letter);
-int	ft_swap(t_stacks **stack_a, t_stacks **stack_b, char stack_letter);
+int					ft_push(t_stacks **stack_a, t_stacks **stack_b, \
+						char stack_letter);
+int					ft_rotate(t_stacks **stack_a, t_stacks **stack_b, \
+						char stack_letter);
+int					ft_reverse_rotate(t_stacks **stack_a, t_stacks **stack_b, \
+						char stack_letter);
+int					ft_swap(t_stacks **stack_a, t_stacks **stack_b, \
+						char stack_letter);
+t_stacks			*ft_stack_new(int content);
+void				ft_stack_clear(t_stacks **stack);
+t_stacks			*ft_stack_last(t_stacks *stack);
+void				ft_stack_add_back(t_stacks **astack, t_stacks *new_stack);
 
 #endif

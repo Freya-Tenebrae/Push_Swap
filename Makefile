@@ -13,10 +13,11 @@
 NAME=push_swap
 SRCS=$(addprefix ${FOLDER}/, \
 	ft_push_swap.c \
-	ft_tools_swap.c \
+	ft_tools_other.c \
 	ft_tools_push.c \
 	ft_tools_rotate.c \
-	ft_tools_reverse_rotate.c)
+	ft_tools_reverse_rotate.c \
+	ft_tools_swap.c)
 OBJS=$(SRCS:.c=.o)
 
 HEADER=includes
@@ -31,15 +32,18 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	make -C $(LIBFT) bonus
-	$(CC) $(CFLAGS) $(NAME) $(OBJS) $(LIBFT)/libft.a
+	$(CC) $(CFLAGS) -o $@ $^ $(LIBFT)/libft.a
 
 %.o: %.c
 	$(CC) -c $(CFLAGS) -o $@ $< -I $(HEADER)
 
 clean:
+	make clean -C $(LIBFT)
 	$(RM) $(OBJS)
 
-fclean: clean
+fclean: 
+	make fclean -C $(LIBFT)
+	$(RM) $(OBJS)
 	${RM} push_swap
 
 re: fclean all

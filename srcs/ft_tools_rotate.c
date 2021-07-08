@@ -12,18 +12,44 @@
 
 #include "../includes/ft_push_swap.h"
 
+static int	ft_rotate_one_stack(t_stacks **stack)
+{
+	t_stacks	*tmp_stack;
+
+	if (stack == NULL)
+		return (-1);
+	if (*stack != NULL)
+	{
+		if ((*stack)->next != NULL)
+		{
+			tmp_stack = (*stack);
+			*stack = (*stack)->next;
+			tmp_stack->next = NULL;
+			ft_stack_add_back(stack, tmp_stack);
+		}
+	}
+	return (0);
+}
+
 int	ft_rotate(t_stacks **stack_a, t_stacks **stack_b, char stack_letter)
 {
 	if (stack_letter == 'a')
 	{
-		/* ra */
+		ft_putstr_fd("ra\n", 1);
+		return (ft_rotate_one_stack(stack_a));
 	}
 	else if (stack_letter == 'b')
 	{
-		/* rb */
+		ft_putstr_fd("rb\n", 1);
+		return (ft_rotate_one_stack(stack_b));
 	}
 	else if (stack_letter == 'c')
 	{
-		/* rr */
+		ft_putstr_fd("rr\n", 1);
+		if (ft_rotate_one_stack(stack_a) != 0)
+			return (-1);
+		if (ft_rotate_one_stack(stack_b) != 0)
+			return (-1);
 	}
+	return (0);
 }
