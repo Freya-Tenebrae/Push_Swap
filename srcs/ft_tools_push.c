@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 13:20:09 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/07/07 14:32:49 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/08 12:27:21 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,13 @@ int	ft_push(t_stacks **stack_a, t_stacks **stack_b, char stack_letter)
 {
 	if (stack_letter == 'a')
 	{
-		return (ft_push_stackone_to_stacktwo(stack_b, stack_a));
 		ft_putstr_fd("pa\n", 1);
+		return (ft_push_stackone_to_stacktwo(stack_b, stack_a));
 	}
 	else if (stack_letter == 'b')
 	{
-		return (ft_push_stackone_to_stacktwo(stack_a, stack_b));
 		ft_putstr_fd("pb\n", 1);
+		return (ft_push_stackone_to_stacktwo(stack_a, stack_b));
 	}
 	else
 		return (-1);

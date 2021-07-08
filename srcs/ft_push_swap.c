@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 13:09:07 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/07/03 14:22:13 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/08 12:59:48 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,11 +74,35 @@ static int	ft_check_is_unique(t_stacks *stack_a)
 
 static void	ft_push_swap(t_stacks **stack_a, t_stacks **stack_b)
 {
-	(void)stack_a;
-	(void)stack_b;
-	ft_putstr_fd("PUSH_SWAP_STATES : \n- check error OK\n- tools OK\
-		\n- swap push rotate and reverse rotate need to be tested\
-		\n- sorting algo need to be done\n", 1);
+	ft_print_stack(*stack_a, *stack_b);
+	ft_push(stack_a, stack_b, 'b');
+	ft_print_stack(*stack_a, *stack_b);
+	ft_push(stack_a, stack_b, 'b');
+	ft_print_stack(*stack_a, *stack_b);
+	ft_push(stack_a, stack_b, 'a');
+	ft_print_stack(*stack_a, *stack_b);
+	ft_push(stack_a, stack_b, 'b');
+	ft_print_stack(*stack_a, *stack_b);
+	ft_swap(stack_a, stack_b, 'a');
+	ft_print_stack(*stack_a, *stack_b);
+	ft_swap(stack_a, stack_b, 'b');
+	ft_print_stack(*stack_a, *stack_b);
+	ft_swap(stack_a, stack_b, 'c');
+	ft_print_stack(*stack_a, *stack_b);
+	ft_rotate(stack_a, stack_b, 'a');
+	ft_print_stack(*stack_a, *stack_b);
+	ft_rotate(stack_a, stack_b, 'b');
+	ft_print_stack(*stack_a, *stack_b);
+	ft_rotate(stack_a, stack_b, 'c');
+	ft_print_stack(*stack_a, *stack_b);
+	ft_reverse_rotate(stack_a, stack_b, 'a');
+	ft_print_stack(*stack_a, *stack_b);
+	ft_reverse_rotate(stack_a, stack_b, 'b');
+	ft_print_stack(*stack_a, *stack_b);
+	ft_reverse_rotate(stack_a, stack_b, 'c');
+	ft_print_stack(*stack_a, *stack_b);
+	ft_putstr_fd("\n\n\n", 0);
+	ft_putstr_fd("PUSH_SWAP_STATES : sorting algo need to be done\n", 1);
 }
 
 int	main(int argc, const char **argv)

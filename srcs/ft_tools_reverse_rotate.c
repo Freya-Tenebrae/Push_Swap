@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 13:20:09 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/07/03 14:21:19 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/08 12:56:57 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,17 @@
 
 static void	ft_stack_removelast(t_stacks **stack)
 {
-	t_stacks	**tmp_stack;
+	t_stacks	*tmp_stack;
 
-	tmp_stack = stack;
-	while ((*tmp_stack)->next->next == NULL)
-		(*tmp_stack)->next = NULL;
+	tmp_stack = *stack;
+	while (tmp_stack->next != NULL)
+	{
+		if ((tmp_stack->next)->next == NULL)
+			tmp_stack->next = NULL;
+		else
+			tmp_stack = tmp_stack->next;
+	}
+	
 }
 
 static void	ft_stack_add_front(t_stacks **astack, t_stacks *new_stack)
@@ -52,6 +58,9 @@ static int	ft_reverse_rotate_one_stack(t_stacks **stack)
 
 int	ft_reverse_rotate(t_stacks **stack_a, t_stacks **stack_b, char stack_letter)
 {
+	int result;
+
+	result = 0;
 	if (stack_letter == 'a')
 	{
 		ft_putstr_fd("rra\n", 1);
@@ -66,9 +75,10 @@ int	ft_reverse_rotate(t_stacks **stack_a, t_stacks **stack_b, char stack_letter)
 	{
 		ft_putstr_fd("rrr\n", 1);
 		if (ft_reverse_rotate_one_stack(stack_a) != 0)
-			return (-1);
-		if (ft_reverse_rotate_one_stack(stack_a) != 0)
-			return (-1);
+			result += -1;
+		if (ft_reverse_rotate_one_stack(stack_b) != 0)
+			result += -1;
+		return (result);
 	}
 	return (0);
 }
