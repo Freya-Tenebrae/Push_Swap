@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 13:20:09 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/07/12 13:40:30 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/12 18:36:44 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 static int	ft_swap_one_stack(t_stacks **stack)
 {
-	int	i;
+	int				tmp_content;
+	unsigned int	tmp_order;
 
 	if (stack == NULL)
 		return (-1);
@@ -22,9 +23,12 @@ static int	ft_swap_one_stack(t_stacks **stack)
 	{
 		if ((*stack)->next != NULL)
 		{
-			i = (*stack)->content;
-			(*stack)->content = (*stack)->next->content;
-			(*stack)->next->content = i;
+			tmp_content = (*stack)->content;
+			tmp_order = (*stack)->order;
+			(*stack)->content = ((*stack)->next)->content;
+			(*stack)->order = ((*stack)->next)->order;
+			((*stack)->next)->content = tmp_content;
+			((*stack)->next)->order = tmp_order;
 		}
 	}
 	return (0);

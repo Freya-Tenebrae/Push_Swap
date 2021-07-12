@@ -6,28 +6,53 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 13:09:07 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/07/12 13:39:02 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/12 18:21:31 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_push_swap.h"
 
-static int	ft_check_is_all_num(int argc, const char **argv)
+static int	ft_put_argv_in_strs(int argc, unsigned int *size, \
+				const char **argv, const char ***strs)
 {
-	int	i;
-	int	len;
+	char	*str;
+	int		len;
 
-	i = 0;
-	if (argc < 2)
-		return (-1);
-	while (++i < argc)
+	if (argc == 2)
 	{
-		len = ft_strlen(argv[i]);
-		if ((argv[i])[0] != '-' && ft_isdigit((argv[i])[0]) == 0)
+		if (ft_strchr((argv[1]), ' ') != NULL)
+		{
+			str = ft_strdup((argv[1]));
+			len = ft_strlen(str);
+			*strs = (const char **)ft_split(str, ' ');
+			free(str);
+			if (!*strs)
+				return (-1);
+			*size = 0;
+			while ((*strs)[*size] != NULL)
+				*size += 1;
+			return (0);
+		}
+	}
+	*size = argc - 1;
+	*strs = &(argv[1]);
+	return (0);
+}
+
+static int	ft_check_is_all_num(unsigned int size, const char **strs)
+{
+	unsigned int	i;
+	int				len;
+
+	i = -1;
+	while (++i < size)
+	{
+		len = ft_strlen(strs[i]);
+		if ((strs[i])[0] == '-' || ft_isdigit((strs[i])[0]) == 1)
 		{
 			while (--len > 0)
 			{
-				if (ft_isdigit((argv[i])[len]) == 0)
+				if (ft_isdigit((strs[i])[len]) == 0)
 					return (-1);
 			}
 		}
@@ -35,76 +60,49 @@ static int	ft_check_is_all_num(int argc, const char **argv)
 	return (0);
 }
 
-static int	ft_init_stacks(int argc, const char **argv, t_stacks **stack_a, \
-	t_stacks **stack_b)
+static int	ft_init_stacks(unsigned int size, const char **strs,\
+				t_stacks **stack_a, t_stacks **stack_b)
 {
-	int			i;
-	t_stacks	*tmpstack;
+	unsigned int	i;
+	t_stacks		*tmpstack;
 
-	i = 0;
+	i = -1;
 	*stack_a = NULL;
 	*stack_b = NULL;
-	while (++i < argc)
+	while (++i < size)
 	{
-		tmpstack = ft_stack_new(ft_atoi(argv[i]));
+		tmpstack = ft_stack_new(ft_atoi(strs[i]));
 		if (!tmpstack)
-		{
-			ft_stack_clear(stack_a);
 			return (-1);
-		}
 		ft_stack_add_back(stack_a, tmpstack);
 	}
 	return (0);
 }
 
-static int	ft_check_is_unique(t_stacks *stack_a)
-{
-	t_stacks	*stackptr;
-
-	while (stack_a != NULL)
-	{
-		stackptr = stack_a->next;
-		while (stackptr != NULL)
-		{
-			if (stack_a->content == stackptr->content)
-				return (-1);
-			stackptr = stackptr->next;
-		}
-		stack_a = stack_a->next;
-	}
-	return (0);
-}
-
-static void	ft_push_swap(t_stacks **stack_a, t_stacks **stack_b, int size)
-{
-	if (size <= 55)
-		ft_push_swap_small_stack(stack_a, stack_b, size);
-	else
-		ft_push_swap_big_stack(stack_a, stack_b, size);
-}
-
 int	main(int argc, const char **argv)
 {
-	t_stacks	*stack_a;
-	t_stacks	*stack_b;
+	t_stacks		*stack_a;
+	t_stacks		*stack_b;
+	unsigned int	size;
+	const char		**strs;
 
-	if (ft_check_is_all_num(argc, argv) != 0)
+	if (argc == 1)
+		return (0);
+	if (ft_put_argv_in_strs(argc, &size, argv, &strs) != 0)
 	{
 		ft_putstr_fd("Error\n", 1);
 		return (-1);
 	}
-	if (ft_init_stacks(argc, argv, &stack_a, &stack_b) != 0)
+	if (ft_check_is_all_num(size, strs) != 0)
 	{
 		ft_putstr_fd("Error\n", 1);
 		return (-1);
 	}
-	if (ft_check_is_unique(stack_a) != 0)
+	if (ft_init_stacks(size, strs, &stack_a, &stack_b) != 0)
 	{
 		ft_putstr_fd("Error\n", 1);
 		ft_stack_clear(&stack_a);
 		return (-1);
 	}
-	ft_push_swap(&stack_a, &stack_b, argc - 1);
-	ft_stack_clear(&stack_a);
-	return (0);
+	return (ft_push_swap(&stack_a, &stack_b, size));
 }

@@ -6,59 +6,11 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 13:50:42 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/07/12 13:41:55 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/12 18:22:22 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_push_swap.h"
-
-static int	ft_found_position_smallest_number(t_stacks *stack)
-{
-	int	i;
-	int	j;
-	int	number;
-
-	if (stack == NULL)
-		return (0);
-	i = 0;
-	j = 0;
-	number = stack->content;
-	while (stack->next != NULL)
-	{
-		stack = stack->next;
-		j++;
-		if (stack->content < number)
-		{
-			number = stack->content;
-			i = j;
-		}
-	}
-	return (i);
-}
-
-static int	ft_found_position_bigest_number(t_stacks *stack)
-{
-	int	i;
-	int	j;
-	int	number;
-
-	if (stack == NULL)
-		return (0);
-	i = 0;
-	j = 0;
-	number = stack->content;
-	while (stack->next != NULL)
-	{
-		stack = stack->next;
-		j++;
-		if (stack->content > number)
-		{
-			number = stack->content;
-			i = j;
-		}
-	}
-	return (i);
-}
 
 static void	ft_push_swap_underequal_3_part2(t_stacks **stack_a, \
 			t_stacks **stack_b, int i, int j)
@@ -87,7 +39,7 @@ static void	ft_push_swap_underequal_3_part2(t_stacks **stack_a, \
 }
 
 static void	ft_push_swap_underequal_3_part1(t_stacks **stack_a, \
-			t_stacks **stack_b, int size)
+			t_stacks **stack_b, unsigned int size)
 {
 	int	i;
 	int	j;
@@ -106,9 +58,9 @@ static void	ft_push_swap_underequal_3_part1(t_stacks **stack_a, \
 }
 
 void	ft_push_swap_small_stack(t_stacks **stack_a, t_stacks **stack_b, \
-			int size)
+			unsigned int size)
 {
-	int	i;
+	unsigned int	i;
 
 	while (size > 3)
 	{

@@ -34,13 +34,14 @@ pa
 
 ## Avancement / Advancement
 
+- [x] parsing atguments (from n int or one string)
 - [x] tools (push, swap, rotate, reverse rotate)
 - [x] error management (is not a int, same number twice)
-- [ ] error management (over int max or under int min, string of value)
+- [ ] error management (over int max or under int min) ?
 - [x] sorting algo (small stack)
 - [ ] sorting algo (big stack)
 - [ ] bonus (checker)
 
 ## Tester :
 
-- [ ] Need to found tester
+`TODO`
