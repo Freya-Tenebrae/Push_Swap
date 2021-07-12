@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 13:20:09 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/07/08 15:31:12 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/12 13:40:23 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	ft_rotate_one_stack(t_stacks **stack)
 
 int	ft_rotate(t_stacks **stack_a, t_stacks **stack_b, char stack_letter)
 {
-	int result;
+	int	result;
 
 	result = 0;
 	if (stack_letter == 'a')

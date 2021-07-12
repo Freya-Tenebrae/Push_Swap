@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 13:09:35 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/07/08 14:00:11 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/12 12:54:32 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,10 @@ typedef struct s_stacks
 /*                                 MAIN PART                                  */
 /* ************************************************************************** */
 int					main(int argc, const char **argv);
-void				ft_push_swap(t_stacks **stack_a, t_stacks **stack_b, \
-						int size);
+void				ft_push_swap_small_stack(t_stacks **stack_a, \
+						t_stacks **stack_b, int size);
+void				ft_push_swap_big_stack(t_stacks **stack_a, \
+						t_stacks **stack_b, int size);
 /* ************************************************************************** */
 /*                                   TOOLS                                    */
 /* ************************************************************************** */

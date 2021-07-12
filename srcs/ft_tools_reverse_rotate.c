@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 13:20:09 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/07/08 15:31:45 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/12 13:39:59 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ static void	ft_stack_removelast(t_stacks **stack)
 		else
 			tmp_stack = tmp_stack->next;
 	}
-	
 }
 
 static void	ft_stack_add_front(t_stacks **astack, t_stacks *new_stack)
@@ -58,7 +57,7 @@ static int	ft_reverse_rotate_one_stack(t_stacks **stack)
 
 int	ft_reverse_rotate(t_stacks **stack_a, t_stacks **stack_b, char stack_letter)
 {
-	int result;
+	int	result;
 
 	result = 0;
 	if (stack_letter == 'a')

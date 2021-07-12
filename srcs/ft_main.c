@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 13:09:07 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/07/08 14:00:40 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/12 13:39:02 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,12 @@ static int	ft_check_is_all_num(int argc, const char **argv)
 	{
 		len = ft_strlen(argv[i]);
 		if ((argv[i])[0] != '-' && ft_isdigit((argv[i])[0]) == 0)
-		while (--len > 0)
 		{
-			if (ft_isdigit((argv[i])[len]) == 0)
-				return (-1);
+			while (--len > 0)
+			{
+				if (ft_isdigit((argv[i])[len]) == 0)
+					return (-1);
+			}
 		}
 	}
 	return (0);
@@ -71,6 +73,14 @@ static int	ft_check_is_unique(t_stacks *stack_a)
 		stack_a = stack_a->next;
 	}
 	return (0);
+}
+
+static void	ft_push_swap(t_stacks **stack_a, t_stacks **stack_b, int size)
+{
+	if (size <= 55)
+		ft_push_swap_small_stack(stack_a, stack_b, size);
+	else
+		ft_push_swap_big_stack(stack_a, stack_b, size);
 }
 
 int	main(int argc, const char **argv)
