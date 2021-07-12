@@ -20,7 +20,17 @@ Error
 ```
 ```shell
 ./push_swap 1 3 5 2 6 4
-PUSH_SWAP_STATES : sorting algo need to be done
+pb
+ra
+ra
+pb
+ra
+ra
+pb
+rra
+pa
+pa
+pa
 ```
 
 ## Avancement / Advancement
