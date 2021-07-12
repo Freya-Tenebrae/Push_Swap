@@ -35,9 +35,10 @@ pa
 ## Avancement / Advancement
 
 - [x] tools (push, swap, rotate, reverse rotate)
-- [x] error management (is not a int, same number twice, and if negative number are OK)
-- [ ] error management (over int max or under int min)
-- [ ] sorting algo
+- [x] error management (is not a int, same number twice)
+- [ ] error management (over int max or under int min, string of value)
+- [x] sorting algo (small stack)
+- [ ] sorting algo (big stack)
 - [ ] bonus (checker)
 
 ## Tester :
