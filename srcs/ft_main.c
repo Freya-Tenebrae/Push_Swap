@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 13:09:07 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/07/12 18:21:31 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/12 19:59:17 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,17 +90,17 @@ int	main(int argc, const char **argv)
 		return (0);
 	if (ft_put_argv_in_strs(argc, &size, argv, &strs) != 0)
 	{
-		ft_putstr_fd("Error\n", 1);
+		ft_putstr_fd("Error\n", 2);
 		return (-1);
 	}
 	if (ft_check_is_all_num(size, strs) != 0)
 	{
-		ft_putstr_fd("Error\n", 1);
+		ft_putstr_fd("Error\n", 2);
 		return (-1);
 	}
 	if (ft_init_stacks(size, strs, &stack_a, &stack_b) != 0)
 	{
-		ft_putstr_fd("Error\n", 1);
+		ft_putstr_fd("Error\n", 2);
 		ft_stack_clear(&stack_a);
 		return (-1);
 	}
