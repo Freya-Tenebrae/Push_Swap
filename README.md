@@ -19,8 +19,7 @@ Error
 Error
 ```
 ```shell
-./push_swap 1 3 5 2 6 4
-pb
+./push_swap 2 3 1 5 4  
 ra
 ra
 pb
@@ -28,7 +27,7 @@ ra
 ra
 pb
 rra
-pa
+sa
 pa
 pa
 ```
