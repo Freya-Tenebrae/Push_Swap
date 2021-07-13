@@ -15,7 +15,7 @@ SRCS=$(addprefix ${FOLDER}/, \
 	ft_main.c \
 	ft_push_swap.c \
 	ft_push_swap_small_stack.c \
-	ft_push_swap_big_stack.c \
+	ft_push_swap_order_radix_sort.c \
 	ft_tools_other_1.c \
 	ft_tools_other_2.c \
 	ft_tools_push.c \

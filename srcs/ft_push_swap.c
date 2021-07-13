@@ -82,7 +82,8 @@ static int ft_replace_number_by_logical_order(t_stacks **stack_a, \
 	return (0);
 }
 
-int ft_push_swap(t_stacks **stack_a, t_stacks **stack_b, unsigned int size)
+int ft_push_swap(t_stacks **stack_a, t_stacks **stack_b, unsigned int size, \
+		char ***strs)
 {
 	if (ft_check_is_unique(*stack_a) != 0)
 	{
@@ -99,7 +100,8 @@ int ft_push_swap(t_stacks **stack_a, t_stacks **stack_b, unsigned int size)
 	if (size <= 7)
 		ft_push_swap_small_stack(stack_a, stack_b, size);
 	else
-		ft_push_swap_big_stack(stack_a, stack_b, size);
+		ft_push_swap_order_radix_sort(stack_a, stack_b, size);
 	ft_stack_clear(stack_a);
+	ft_freestrs(strs, 0);
 	return (0);
 }

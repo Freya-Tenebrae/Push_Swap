@@ -40,7 +40,7 @@ static int ft_getpowertwo(int i)
 	return (n);
 }
 
-void	ft_push_swap_big_stack(t_stacks **stack_a, t_stacks **stack_b, \
+void	ft_push_swap_order_radix_sort(t_stacks **stack_a, t_stacks **stack_b, \
 	unsigned int size)
 {
 	int				i;

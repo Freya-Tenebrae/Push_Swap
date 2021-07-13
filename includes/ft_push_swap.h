@@ -32,10 +32,10 @@ typedef struct s_stacks
 /* ************************************************************************** */
 int					main(int argc, const char **argv);
 int 				ft_push_swap(t_stacks **stack_a, t_stacks **stack_b, \
-						unsigned int size);
+						unsigned int size, char ***strs);
 void				ft_push_swap_small_stack(t_stacks **stack_a, \
 						t_stacks **stack_b, unsigned int size);
-void				ft_push_swap_big_stack(t_stacks **stack_a, \
+void				ft_push_swap_order_radix_sort(t_stacks **stack_a, \
 						t_stacks **stack_b, unsigned int size);
 /* ************************************************************************** */
 /*                                   TOOLS                                    */
@@ -50,6 +50,7 @@ int					ft_reverse_rotate(t_stacks **stack_a, t_stacks **stack_b, \
 int					ft_swap(t_stacks **stack_a, t_stacks **stack_b, \
 						char stack_letter);
 /* ****************************** Other Tools ******************************* */
+void				ft_freestrs(char ***strs, int i);
 t_stacks			*ft_stack_new(int content);
 void				ft_stack_clear(t_stacks **stack);
 t_stacks			*ft_stack_last(t_stacks *stack);

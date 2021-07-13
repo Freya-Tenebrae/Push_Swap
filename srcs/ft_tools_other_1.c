@@ -12,6 +12,17 @@
 
 #include "../includes/ft_push_swap.h"
 
+void	ft_freestrs(char ***strs, int i)
+{
+	while (--i >= 0)
+	{
+		free((*strs)[i]);
+		(*strs)[i] = NULL;
+	}
+	free(*strs);
+	*strs = NULL;
+}
+
 t_stacks	*ft_stack_new(int content)
 {
 	t_stacks	*stack;
