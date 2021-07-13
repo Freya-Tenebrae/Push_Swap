@@ -44,4 +44,9 @@ pa
 
 ## Tester :
 
-`TODO`
+- [ ] push_swap_tester(https://github.com/lmalki-h/push_swap_tester)
+- [ ] push_swap_tester(https://github.com/LeoFu9487/push_swap_tester.git)
+
+## Visualizer :
+
+push_swap_visualizer(https://github.com/o-reo/push_swap_visualizer.git)
