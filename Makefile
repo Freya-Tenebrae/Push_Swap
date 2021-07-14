@@ -6,7 +6,7 @@
 #    By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/14 23:11:43 by cmaginot          #+#    #+#              #
-#    Updated: 2021/07/14 03:14:12 by cmaginot         ###   ########.fr        #
+#    Updated: 2021/07/14 03:20:06 by cmaginot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,9 +26,9 @@ SRCS_BONUS==$(addprefix ${FOLDER}/, )
 OBJS=$(SRCS:.c=.o)
 OBJS_BONUS=$(SRCS_BONUS:.c=.o)
 
-HEADER=includes
+INCLUDES=includes
 FOLDER=srcs
-LIBFT=libft
+LIBFT=$(addprefix ${INCLUDES}/, libft)
 
 CC=gcc -g
 CFLAGS=-Wall -Wextra -Werror -g3 -fsanitize=address
@@ -45,7 +45,7 @@ bonus: $(OBJS_BONUS)
 	$(CC) $(CFLAGS) -o $@ $^ $(LIBFT)/libft.a
 
 %.o: %.c
-	$(CC) -c $(CFLAGS) -o $@ $< -I $(HEADER)
+	$(CC) -c $(CFLAGS) -o $@ $< -I $(INCLUDES)
 
 clean:
 	make clean -C $(LIBFT)
