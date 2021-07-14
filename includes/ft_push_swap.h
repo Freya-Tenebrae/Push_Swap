@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 13:09:35 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/07/12 18:21:49 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/14 02:19:26 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct s_stacks
 /*                                 MAIN PART                                  */
 /* ************************************************************************** */
 int					main(int argc, const char **argv);
-int 				ft_push_swap(t_stacks **stack_a, t_stacks **stack_b, \
+int					ft_push_swap(t_stacks **stack_a, t_stacks **stack_b, \
 						unsigned int size, char ***strs);
 void				ft_push_swap_small_stack(t_stacks **stack_a, \
 						t_stacks **stack_b, unsigned int size);
@@ -55,7 +55,8 @@ t_stacks			*ft_stack_new(int content);
 void				ft_stack_clear(t_stacks **stack);
 t_stacks			*ft_stack_last(t_stacks *stack);
 void				ft_stack_add_back(t_stacks **astack, t_stacks *new_stack);
-void				ft_print_content_stack(t_stacks *stack_a, t_stacks *stack_b);
+void				ft_print_content_stack(t_stacks *stack_a, \
+						t_stacks *stack_b);
 void				ft_print_order_stack(t_stacks *stack_a, t_stacks *stack_b);
 int					ft_found_position_smallest_number(t_stacks *stack);
 int					ft_found_position_bigest_number(t_stacks *stack);

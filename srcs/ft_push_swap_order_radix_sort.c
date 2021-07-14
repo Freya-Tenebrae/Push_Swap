@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push_swap_big_stack.c                           :+:      :+:    :+:   */
+/*   ft_push_swap_order_radix_sort.c                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 12:55:03 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/07/12 19:48:17 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/14 02:21:36 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 	for example 18 (10010) is equal to 5
 */
 
-static int ft_get_order_number_max(int i)
+static int	ft_get_order_number_max(int i)
 {
 	int	j;
 
@@ -28,7 +28,7 @@ static int ft_get_order_number_max(int i)
 	return (j - 1);
 }
 
-static int ft_getpowertwo(int i)
+static int	ft_getpowertwo(int i)
 {
 	int	j;
 	int	n;

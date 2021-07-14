@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 13:09:07 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/07/12 17:33:39 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/14 02:14:18 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,11 @@ t_stacks	*ft_stack_new(int content)
 {
 	t_stacks	*stack;
 
-	stack = malloc(sizeof(stack));
+	stack = malloc(sizeof(t_stacks));
 	if (!stack)
 		return (NULL);
 	stack->content = content;
+	stack->order = 0;
 	stack->next = NULL;
 	return (stack);
 }

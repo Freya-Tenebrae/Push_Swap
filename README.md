@@ -35,18 +35,20 @@ pa
 ## Avancement / Advancement
 
 - [x] parsing atguments (from n int or one string)
-- [x] tools (push, swap, rotate, reverse rotate)
 - [x] error management (is not a int, same number twice, over int max or under int min)
-- [x] leaks
-- [x] sorting algo (under five and radix_sort) (not OK for 100%)
+- [x] checking if already sorted
+- [x] tools (push, swap, rotate, reverse rotate)
+- [x] sorting algo (under five and radix_sort)
 - [ ] better algo for big 100 number (less than 700 operation) (current = 1084 - 3/5)
 - [ ] better algo for big 500 number (less than 5500 operation) (current = 6784 - 4/5)
 - [ ] bonus (checker)
+- [x] leaks
+- [x] norm
 
 ## Tester :
 
-- [ ] push_swap_tester(https://github.com/lmalki-h/push_swap_tester)
-- [ ] push_swap_tester(https://github.com/LeoFu9487/push_swap_tester.git)
+- [ ] push_swap_tester(https://github.com/lmalki-h/push_swap_tester) by lmalki-h(https://github.com/lmalki-h)
+- [ ] push_swap_tester(https://github.com/LeoFu9487/push_swap_tester.git) by LeoFu9487(https://github.com/LeoFu9487)
 
 ## Visualizer :
 
