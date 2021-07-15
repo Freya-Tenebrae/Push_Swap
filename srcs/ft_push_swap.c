@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 15:19:16 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/07/14 03:23:49 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/15 13:07:40 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,26 @@ static int	ft_check_is_unique(t_stacks *stack_a)
 			stackptr = stackptr->next;
 		}
 		stack_a = stack_a->next;
+	}
+	return (0);
+}
+
+static int	ft_is_already_sorted(t_stacks **stack_a)
+{
+	t_stacks	*tmpstack;
+	int			number;
+
+	if (stack_a == NULL)
+		return (-1);
+	tmpstack = *stack_a;
+	number = tmpstack->content;
+	while (tmpstack != NULL)
+	{
+		if (tmpstack->content >= number)
+			number = tmpstack->content;
+		else
+			return (1);
+		tmpstack = tmpstack->next;
 	}
 	return (0);
 }
@@ -84,26 +104,6 @@ static int	ft_replace_number_by_logical_order(t_stacks **stack_a, \
 	return (0);
 }
 
-static int	ft_is_already_sorted(t_stacks **stack_a)
-{
-	t_stacks	*tmpstack;
-	int			number;
-
-	if (stack_a == NULL)
-		return (-1);
-	tmpstack = *stack_a;
-	number = tmpstack->content;
-	while (tmpstack != NULL)
-	{
-		if (tmpstack->content >= number)
-			number = tmpstack->content;
-		else
-			return (1);
-		tmpstack = tmpstack->next;
-	}
-	return (0);
-}
-
 int	ft_push_swap(t_stacks **stack_a, t_stacks **stack_b, unsigned int size, \
 		char ***strs)
 {
@@ -115,8 +115,12 @@ int	ft_push_swap(t_stacks **stack_a, t_stacks **stack_b, unsigned int size, \
 				;
 			else if (size <= 7)
 				ft_push_swap_small_stack(stack_a, stack_b, size);
-			else
+			else if (size >= 2000)
 				ft_push_swap_order_radix_sort(stack_a, stack_b, size);
+			else if (size >= 1000)
+				ft_push_swap_quick_sort(stack_a, stack_b, size, 0);
+			else
+				ft_push_swap_custom_sort(stack_a, stack_b, size);
 			ft_stack_clear(stack_a);
 			ft_freestrs(strs, 0);
 			return (0);

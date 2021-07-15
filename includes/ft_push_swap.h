@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 13:09:35 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/07/14 03:23:46 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/15 13:08:28 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <unistd.h>
 # include <limits.h>
 # include "libft/libft.h"
+# include "get_next_line/get_next_line_bonus.h"
 /* ************************************************************************** */
 /*                                  TYPEDEF                                   */
 /* ************************************************************************** */
@@ -37,6 +38,10 @@ void				ft_push_swap_small_stack(t_stacks **stack_a, \
 						t_stacks **stack_b, unsigned int size);
 void				ft_push_swap_order_radix_sort(t_stacks **stack_a, \
 						t_stacks **stack_b, unsigned int size);
+void				ft_push_swap_quick_sort(t_stacks **stack_a, \
+						t_stacks **stack_b, unsigned int size, int n);
+void				ft_push_swap_custom_sort(t_stacks **stack_a, \
+						t_stacks **stack_b, unsigned int size)
 /* ************************************************************************** */
 /*                                   TOOLS                                    */
 /* ************************************************************************** */
