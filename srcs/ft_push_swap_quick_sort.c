@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 12:55:03 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/07/15 17:20:54 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/16 10:20:36 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	ft_get_mediane_on_size(t_stacks **stack_a, unsigned int size)
 	tmp_stack = *stack_a;
 	number = 0.0;
 	i = 0;
-	while (tmp_stack != NULL && i++ <size)
+	while (tmp_stack != NULL && i++ < size)
 	{
 		number += (float)tmp_stack->order / (float)size;
 		tmp_stack = tmp_stack->next;
@@ -139,8 +139,8 @@ void	ft_push_swap_quick_sort(t_stacks **stack_a, t_stacks **stack_b, \
 			ft_reverse_rotate(stack_a, stack_b, 'a');
 		while (*stack_b != NULL)
 			ft_push(stack_a, stack_b, 'a');
-		ft_push_swap_quick_sort(stack_a, stack_b, j, n+1);
-		ft_push_swap_quick_sort(stack_a, stack_b, size - j, n+1);
+		ft_push_swap_quick_sort(stack_a, stack_b, j, n + 1);
+		ft_push_swap_quick_sort(stack_a, stack_b, size - j, n + 1);
 	}
 	else
 	{

@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 14:18:08 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/07/16 10:03:40 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/16 10:24:46 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,8 +103,8 @@ static unsigned int	ft_get_last_position(t_stacks *stack)
 	return (i);
 }
 
-static unsigned int ft_get_pos_to_push(\
-						t_stacks *tmp_stack_a, unsigned int value)
+static unsigned int	ft_get_pos_to_push(t_stacks *tmp_stack_a, \
+	unsigned int value)
 {
 	unsigned int	bigger_under_than_value;
 	unsigned int	smaller_over_than_value;
@@ -124,14 +124,6 @@ static unsigned int ft_get_pos_to_push(\
 	}
 	else
 		pos = bigger_under_than_value;
-											// ft_putstr("	value : |"); ft_putnbr((int)value); 
-											// ft_putstr("|\n");
-											// ft_putstr("		bigger_under_than_value : |"); ft_putnbr((int)bigger_under_than_value); 
-											// ft_putstr("|\n");
-											// ft_putstr("		smaller_over_than_value : |"); ft_putnbr((int)smaller_over_than_value); 
-											// ft_putstr("|\n");
-											// ft_putstr("		pos_return : |"); ft_putnbr((int)pos); 
-											// ft_putstr("|\n");
 	return (pos);
 }
 
@@ -175,17 +167,6 @@ static unsigned int	ft_get_number_of_actions(t_stacks *tmp_stack_a, \
 		number_total_of_action += n_rotation_b;
 	else if (n_rotation_b < 0)
 		number_total_of_action -= n_rotation_b;
-											// ft_putstr("			number_total_of_action : |"); ft_putnbr((int)number_total_of_action);
-											// ft_putstr("|\n");
-											// ft_putstr("			size_stack_a : |"); ft_putnbr((int)size_stack_a);
-											// ft_putstr("| size_stack_b : |"); ft_putnbr((int)size_stack_b); 
-											// ft_putstr("|\n");
-											// ft_putstr("			pos_act_to_push_a : |"); ft_putnbr((int)pos_act_to_push_a); 
-											// ft_putstr("| n_rotation_a : |"); ft_putnbr((int)n_rotation_a); 
-											// ft_putstr("|\n");
-											// ft_putstr("			pos_act_b : |"); ft_putnbr((int)pos_act_b); 
-											// ft_putstr("| n_rotation_b : |"); ft_putnbr((int)n_rotation_b); 
-											// ft_putstr("|\n");
 	return (number_total_of_action);
 }
 
@@ -207,15 +188,10 @@ static void	ft_get_optimised_pivot_b(t_stacks *tmp_stack_a, \
 		pos_act_to_push_a = ft_get_pos_to_push(\
 								tmp_stack_a, (*tmp_stack_b)->order) + 1;
 		number_of_action_act = ft_get_number_of_actions(tmp_stack_a, \
-									tmp_stack_b_bis, pos_act_to_push_a, pos_act_b);
+									tmp_stack_b_bis, pos_act_to_push_a, \
+									pos_act_b);
 		if (number_of_action_act < number_of_action_min)
 		{
-											// ft_putstr("		number_of_action_act : |"); ft_putnbr((int)number_of_action_act); 
-											// ft_putstr("| number_of_action_min : |"); ft_putnbr((int)number_of_action_min); 
-											// ft_putstr("|\n");
-											// ft_putstr("		pos_act_to_push_a : |"); ft_putnbr((int)pos_act_to_push_a); 
-											// ft_putstr("| pos_act_b : |"); ft_putnbr((int)pos_act_b); 
-											// ft_putstr("|\n");
 			number_of_action_min = number_of_action_act;
 			*pos_optimised_a = pos_act_to_push_a;
 			*pos_optimised_b = pos_act_b;
@@ -247,8 +223,5 @@ void	ft_get_optimised_push_a(t_stacks *tmp_stack_a, t_stacks *tmp_stack_b, \
 			*n_rotation_b = pos_optimised_b;
 		else
 			*n_rotation_b = pos_optimised_b - size_stack_b;
-											// ft_putstr("		n_rotation_a : |"); ft_putnbr(*n_rotation_a); 
-											// ft_putstr("| n_rotation_b : |"); ft_putnbr(*n_rotation_b); 
-											// ft_putstr("|\n\n");
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 17:27:29 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/07/16 08:39:23 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/16 10:19:41 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ unsigned int	ft_found_position_smallest_number(t_stacks *stack)
 {
 	unsigned int	i;
 	unsigned int	j;
-	int	number;
+	int				number;
 
 	if (stack == NULL)
 		return (0);
@@ -94,7 +94,7 @@ unsigned int	ft_found_position_bigest_number(t_stacks *stack)
 {
 	unsigned int	i;
 	unsigned int	j;
-	int	number;
+	int				number;
 
 	if (stack == NULL)
 		return (0);

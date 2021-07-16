@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 13:09:07 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/07/14 03:23:48 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/16 10:18:00 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ int	main(int argc, const char **argv)
 
 	if (argc == 1)
 		return (0);
-	if ((argv[1])[0] == '\0') 
+	if ((argv[1])[0] == '\0')
 		return (0);
 	if (ft_put_argv_in_strs(argc, &size, argv, &strs) == 0)
 	{
