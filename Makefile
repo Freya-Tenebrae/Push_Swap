@@ -6,7 +6,7 @@
 #    By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/14 23:11:43 by cmaginot          #+#    #+#              #
-#    Updated: 2021/07/15 13:07:18 by cmaginot         ###   ########.fr        #
+#    Updated: 2021/07/15 15:10:47 by cmaginot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,8 @@ SRCS=$(addprefix ${FOLDER}/, \
 	ft_main.c \
 	ft_push_swap.c \
 	ft_push_swap_custom_sort_1.c \
+	ft_push_swap_custom_sort_2.c \
+	ft_push_swap_custom_sort_3.c \
 	ft_push_swap_quick_sort.c \
 	ft_push_swap_order_radix_sort.c \
 	ft_push_swap_small_stack.c \

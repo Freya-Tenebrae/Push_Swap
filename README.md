@@ -38,12 +38,14 @@ pa
 - [x] error management (is not a int, same number twice, over int max or under int min)
 - [x] checking if already sorted
 - [x] tools (push, swap, rotate, reverse rotate)
-- [x] sorting algo (under five and radix_sort)
+- [x] sorting algo (under five, radix_sort, quick_sort)
+- [x] custom_sort
+- [ ] custom_sort optimized : ft_push_swap_custom_sort need to be done
 - [ ] better algo for big 100 number (less than 700 operation) (current = 1084 - 3/5)
 - [ ] better algo for big 500 number (less than 5500 operation) (current = 6784 - 4/5)
 - [ ] bonus (checker)
 - [x] leaks
-- [x] norm
+- [ ] norm
 
 ## Tester :
 

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push_swap_median_sort.c                         :+:      :+:    :+:   */
+/*   ft_push_swap_quick_sort.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 12:55:03 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/07/15 13:07:34 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/15 17:20:54 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static int	ft_already_sorted_on_size(t_stacks **stack_a, unsigned int size)
 }
 
 static void	ft_push_swap_underequal_3_alt(t_stacks **stack_a, \
-			t_stacks **stack_b, int i, int j)
+			t_stacks **stack_b, unsigned int i, unsigned int j)
 {
 	if (i == 2)
 	{

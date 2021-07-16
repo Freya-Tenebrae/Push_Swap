@@ -6,14 +6,14 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 13:50:42 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/07/14 03:23:51 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/15 17:21:15 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_push_swap.h"
 
 static void	ft_push_swap_underequal_3_part2(t_stacks **stack_a, \
-			t_stacks **stack_b, int i, int j)
+			t_stacks **stack_b, unsigned int i, unsigned int j)
 {
 	if (j == 2)
 	{
@@ -41,8 +41,8 @@ static void	ft_push_swap_underequal_3_part2(t_stacks **stack_a, \
 static void	ft_push_swap_underequal_3_part1(t_stacks **stack_a, \
 			t_stacks **stack_b, unsigned int size)
 {
-	int	i;
-	int	j;
+	unsigned int	i;
+	unsigned int	j;
 
 	if (size == 2)
 	{
