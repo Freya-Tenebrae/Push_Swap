@@ -6,7 +6,7 @@
 #    By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/14 23:11:43 by cmaginot          #+#    #+#              #
-#    Updated: 2021/07/15 15:10:47 by cmaginot         ###   ########.fr        #
+#    Updated: 2021/07/16 18:45:43 by cmaginot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,14 +14,15 @@ NAME=push_swap
 SRCS=$(addprefix ${FOLDER}/, \
 	ft_main.c \
 	ft_push_swap.c \
-	ft_push_swap_custom_sort_1.c \
-	ft_push_swap_custom_sort_2.c \
-	ft_push_swap_custom_sort_3.c \
-	ft_push_swap_quick_sort.c \
+	ft_push_swap_custom_sort.c \
 	ft_push_swap_order_radix_sort.c \
+	ft_push_swap_quick_sort.c \
 	ft_push_swap_small_stack.c \
-	ft_tools_other_1.c \
-	ft_tools_other_2.c \
+	ft_tools_custom_sort_1.c \
+	ft_tools_custom_sort_2.c \
+	ft_tools_found_position_value_in_stacks.c \
+	ft_tools_informations_stacks.c \
+	ft_tools_memory_and_access_stacks.c \
 	ft_tools_push.c \
 	ft_tools_rotate.c \
 	ft_tools_reverse_rotate.c \

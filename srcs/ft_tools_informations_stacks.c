@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tools_other_2.c                                 :+:      :+:    :+:   */
+/*   ft_tools_informations_stacks.c                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 17:27:29 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/07/16 10:19:41 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/16 18:45:38 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,50 +66,22 @@ void	ft_print_order_stack(t_stacks *stack_a, t_stacks *stack_b)
 	ft_putstr("|\n");
 }
 
-unsigned int	ft_found_position_smallest_number(t_stacks *stack)
+unsigned int	ft_get_size_one_stacks(t_stacks *tmp_stack)
 {
-	unsigned int	i;
-	unsigned int	j;
-	int				number;
+	unsigned int	size;
 
-	if (stack == NULL)
-		return (0);
-	i = 0;
-	j = 0;
-	number = stack->content;
-	while (stack->next != NULL)
+	size = 0;
+	while (tmp_stack != NULL)
 	{
-		stack = stack->next;
-		j++;
-		if (stack->content < number)
-		{
-			number = stack->content;
-			i = j;
-		}
+		size += 1;
+		tmp_stack = tmp_stack->next;
 	}
-	return (i);
+	return (size);
 }
 
-unsigned int	ft_found_position_bigest_number(t_stacks *stack)
+void	ft_get_size_stacks(t_stacks *tmp_stack_a, t_stacks *tmp_stack_b, \
+				unsigned int *size_stack_a, unsigned int *size_stack_b)
 {
-	unsigned int	i;
-	unsigned int	j;
-	int				number;
-
-	if (stack == NULL)
-		return (0);
-	i = 0;
-	j = 0;
-	number = stack->content;
-	while (stack->next != NULL)
-	{
-		stack = stack->next;
-		j++;
-		if (stack->content > number)
-		{
-			number = stack->content;
-			i = j;
-		}
-	}
-	return (i);
+	*size_stack_a = ft_get_size_one_stacks(tmp_stack_a);
+	*size_stack_b = ft_get_size_one_stacks(tmp_stack_b);
 }

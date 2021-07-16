@@ -6,13 +6,13 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 12:55:03 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/07/16 10:20:36 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/16 18:45:34 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_push_swap.h"
 
-static int	ft_get_mediane_on_size(t_stacks **stack_a, unsigned int size)
+/*static int	ft_get_mediane_on_size(t_stacks **stack_a, unsigned int size)
 {
 	t_stacks		*tmp_stack;
 	float			number;
@@ -152,4 +152,4 @@ void	ft_push_swap_quick_sort(t_stacks **stack_a, t_stacks **stack_b, \
 				ft_rotate(stack_a, stack_b, 'a');
 		}
 	}
-}
+} */

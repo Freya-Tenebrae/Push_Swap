@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 15:19:16 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/07/16 10:19:13 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/16 18:45:32 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,12 @@ int	ft_push_swap(t_stacks **stack_a, t_stacks **stack_b, unsigned int size, \
 		{
 			if (ft_is_already_sorted(stack_a) == 0)
 				;
-			ft_push_swap_custom_sort(stack_a, stack_b, size);
+			else if (size <= 5)
+				ft_push_swap_small_stack(stack_a, stack_b, size);
+			else if (size <= 800)
+				ft_push_swap_custom_sort(stack_a, stack_b, size);
+			else
+				ft_push_swap_order_radix_sort(stack_a, stack_b, size);
 			ft_stack_clear(stack_a);
 			ft_freestrs(strs, 0);
 			return (0);

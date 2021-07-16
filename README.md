@@ -8,7 +8,26 @@ This Repositorie contains my solution to the project `Push_swap` of 42 (Paris).
 
 [![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/cmaginot/push_swap)](https://github.com/JaeSeoKim/badge42)
 
-## Exemple of Uses
+## Using push_swap
+
+### Cloning
+
+```shell
+git clone --recurse-submodules https://github.com/Freya-Tenebrae/Push_Swap.git
+```
+
+### Compilation
+
+for push_swap :
+```shell
+make
+```
+for checker
+```shell
+make bonus
+```
+
+### Exemple of uses
 
 ```shell
 ./push_swap 1 2 3 4 five 6 8 7
@@ -38,19 +57,15 @@ pa
 - [x] error management (is not a int, same number twice, over int max or under int min)
 - [x] checking if already sorted
 - [x] tools (push, swap, rotate, reverse rotate)
-- [x] sorting algo (under five, radix_sort, quick_sort)
-- [x] custom_sort
-- [ ] custom_sort optimized : ft_push_swap_custom_sort need to be done
-- [ ] better algo for big 100 number (less than 700 operation) (current = 1084 - 3/5)
-- [ ] better algo for big 500 number (less than 5500 operation) (current = 6784 - 4/5)
+- [x] sorting algo (under five, radix_sort, custom_sort) (values : actions) (||||)
 - [ ] bonus (checker)
 - [x] leaks
-- [ ] norm
+- [x] norm
 
 ## Tester :
 
-- [ ] push_swap_tester(https://github.com/lmalki-h/push_swap_tester) by lmalki-h(https://github.com/lmalki-h)
-- [ ] push_swap_tester(https://github.com/LeoFu9487/push_swap_tester.git) by LeoFu9487(https://github.com/LeoFu9487)
+- [x] push_swap_tester(https://github.com/lmalki-h/push_swap_tester) by lmalki-h(https://github.com/lmalki-h)
+- [x] push_swap_tester(https://github.com/LeoFu9487/push_swap_tester.git) by LeoFu9487(https://github.com/LeoFu9487)
 
 ## Visualizer :
 
