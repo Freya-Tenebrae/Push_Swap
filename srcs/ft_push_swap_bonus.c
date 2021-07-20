@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 15:49:26 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/07/20 17:12:59 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/20 17:24:52 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static int	ft_fetch_one_action(char ***standart_read, char ***tmp_stdin, \
 		*standart_read = NULL;
 	else
 		*standart_read = malloc(sizeof(char **) * (*i + 1));
-	if(!*standart_read)
+	if (!*standart_read)
 	{
 		ft_freestrs(tmp_stdin, *i);
 		free(line);
