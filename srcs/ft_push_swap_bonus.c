@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 15:49:26 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/07/20 17:29:48 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/20 17:30:55 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,7 +128,7 @@ static int	ft_is_sorted(t_stacks **stack_a, t_stacks **stack_b)
 	}
 	if (*stack_b == NULL)
 		return (0);
-	return(1);
+	return (1);
 }
 
 int	ft_push_swap(t_stacks **stack_a, t_stacks **stack_b, unsigned int size, \
