@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 15:49:26 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/07/20 17:24:52 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/20 17:29:48 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,13 +109,26 @@ static void	ft_exec_actions(char **standart_read, t_stacks **stack_a, \
 	}
 }
 
-static int	ft_is_sorted(t_stacks **stack_a, t_stacks **stack_b, int size)
+static int	ft_is_sorted(t_stacks **stack_a, t_stacks **stack_b)
 {
-	(void)stack_a;
-	(void)stack_b;
-	(void)size;
-	//return 0 if sorted, else return 1
-	return (0);
+	t_stacks	*tmpstack;
+	int			number;
+
+	if (stack_a == NULL)
+		return (-1);
+	tmpstack = *stack_a;
+	number = tmpstack->content;
+	while (tmpstack != NULL)
+	{
+		if (tmpstack->content >= number)
+			number = tmpstack->content;
+		else
+			return (1);
+		tmpstack = tmpstack->next;
+	}
+	if (*stack_b == NULL)
+		return (0);
+	return(1);
 }
 
 int	ft_push_swap(t_stacks **stack_a, t_stacks **stack_b, unsigned int size, \

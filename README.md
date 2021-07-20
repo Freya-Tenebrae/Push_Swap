@@ -63,7 +63,7 @@ pa
 - [x] checking if already sorted
 - [x] tools (push, swap, rotate, reverse rotate)
 - [x] sorting algo (under five, radix_sort, custom_sort)
-- [ ] bonus (checker) (segv on 0 line on standart input, else heap-buffer-overflow, need to check if stack_a is sorted and stack_b clean)
+- [ ] bonus (checker) (segv on 0 line on standart input, else heap-buffer-overflow)
 - [x] leaks
 - [ ] norm
 
