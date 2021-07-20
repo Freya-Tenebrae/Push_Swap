@@ -20,11 +20,16 @@ git clone --recurse-submodules https://github.com/Freya-Tenebrae/Push_Swap.git
 
 for push_swap :
 ```shell
-make
+make push_swap
 ```
-for checker
+for checker :
 ```shell
 make bonus
+```
+
+for both :
+```shell
+make
 ```
 
 ### Exemple of uses
@@ -57,8 +62,8 @@ pa
 - [x] error management (is not a int, same number twice, over int max or under int min)
 - [x] checking if already sorted
 - [x] tools (push, swap, rotate, reverse rotate)
-- [x] sorting algo (under five, radix_sort, custom_sort) (values : actions) (||||)
-- [ ] bonus (checker)
+- [x] sorting algo (under five, radix_sort, custom_sort)
+- [ ] bonus (checker) (segv on 0 line on standart input, else heap-buffer-overflow, need to check if stack_a is sorted and stack_b clean)
 - [x] leaks
 - [x] norm
 

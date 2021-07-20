@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 13:20:09 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/07/16 18:45:40 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/20 17:08:48 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,22 +55,13 @@ static int	ft_reverse_rotate_one_stack(t_stacks **stack)
 	return (0);
 }
 
-int	ft_reverse_rotate(t_stacks **stack_a, t_stacks **stack_b, char stack_letter)
+static int ft_reverse_rotate_part_2(t_stacks **stack_a, t_stacks **stack_b, \
+		char stack_letter)
 {
 	int	result;
 
 	result = 0;
-	if (stack_letter == 'a')
-	{
-		ft_putstr_fd("rra\n", 1);
-		return (ft_reverse_rotate_one_stack(stack_a));
-	}
-	else if (stack_letter == 'b')
-	{
-		ft_putstr_fd("rrb\n", 1);
-		return (ft_reverse_rotate_one_stack(stack_b));
-	}
-	else if (stack_letter == 'c')
+	if (stack_letter == 'c')
 	{
 		ft_putstr_fd("rrr\n", 1);
 		if (ft_reverse_rotate_one_stack(stack_a) != 0)
@@ -79,5 +70,35 @@ int	ft_reverse_rotate(t_stacks **stack_a, t_stacks **stack_b, char stack_letter)
 			result += -1;
 		return (result);
 	}
+	else if (stack_letter == 'C')
+	{
+		if (ft_reverse_rotate_one_stack(stack_a) != 0)
+			result += -1;
+		if (ft_reverse_rotate_one_stack(stack_b) != 0)
+			result += -1;
+		return (result);
+	}
 	return (0);
+}
+
+int	ft_reverse_rotate(t_stacks **stack_a, t_stacks **stack_b, char stack_letter)
+{
+	if (stack_letter == 'a')
+	{
+		ft_putstr_fd("rra\n", 1);
+		return (ft_reverse_rotate_one_stack(stack_a));
+	}
+	else if (stack_letter == 'A')
+		return (ft_reverse_rotate_one_stack(stack_a));
+	else if (stack_letter == 'b')
+	{
+		ft_putstr_fd("rrb\n", 1);
+		return (ft_reverse_rotate_one_stack(stack_b));
+	}
+	else if (stack_letter == 'B')
+		return (ft_reverse_rotate_one_stack(stack_b));
+	else
+	{
+		return (ft_reverse_rotate_part_2(stack_a, stack_b, stack_letter));
+	}
 }

@@ -6,11 +6,12 @@
 #    By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/14 23:11:43 by cmaginot          #+#    #+#              #
-#    Updated: 2021/07/16 18:45:43 by cmaginot         ###   ########.fr        #
+#    Updated: 2021/07/20 16:11:40 by cmaginot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=push_swap
+NAME_BONUS=checker
 SRCS=$(addprefix ${FOLDER}/, \
 	ft_main.c \
 	ft_push_swap.c \
@@ -27,11 +28,15 @@ SRCS=$(addprefix ${FOLDER}/, \
 	ft_tools_rotate.c \
 	ft_tools_reverse_rotate.c \
 	ft_tools_swap.c)
-SRCS_GNL==$(addprefix ${GNL}/, get_next_line_bonus.c \
-	get_next_line_util_bonus.c)
-SRCS_BONUS==$(addprefix ${FOLDER}/, )
+SRCS_BONUS=$(addprefix ${FOLDER}/, \
+	ft_main_bonus.c \
+	ft_push_swap_bonus.c \
+	ft_tools_memory_and_access_stacks.c \
+	ft_tools_push.c \
+	ft_tools_rotate.c \
+	ft_tools_reverse_rotate.c \
+	ft_tools_swap.c)
 OBJS=$(SRCS:.c=.o)
-OBJS_GNL=$(SRCS_GNL:.c=.o)
 OBJS_BONUS=$(SRCS_BONUS:.c=.o)
 
 INCLUDES=includes
@@ -43,26 +48,30 @@ CC=gcc -g
 CFLAGS=-Wall -Wextra -Werror -g3 -fsanitize=address
 RM=rm -f
 
-all: $(NAME)
+all: $(NAME) bonus
+
+bonus: $(NAME_BONUS)
 
 $(NAME): $(OBJS)
 	make -C $(LIBFT) bonus
 	$(CC) $(CFLAGS) -o $@ $^ $(LIBFT)/libft.a
 
-bonus: $(OBJS_GNL) $(OBJS_BONUS)
+$(NAME_BONUS): $(OBJS_BONUS)
 	make -C $(LIBFT) bonus
-	$(CC) $(CFLAGS) -o $@ $^ $(LIBFT)/libft.a
+	make -C $(GNL)
+	$(CC) $(CFLAGS) -o $@ $^ $(LIBFT)/libft.a $(GNL)/get_next_line.a
 
 %.o: %.c
 	$(CC) -c $(CFLAGS) -o $@ $< -I $(INCLUDES)
 
 clean:
 	make clean -C $(LIBFT)
+	make clean -C $(GNL)
 	$(RM) $(OBJS)
+	$(RM) $(OBJS_BONUS)
 
-fclean: 
-	make fclean -C $(LIBFT)
-	$(RM) $(OBJS)
-	${RM} push_swap
+fclean: clean
+	$(RM) $(NAME)
+	$(RM) $(NAME_BONUS)
 
 re: fclean all
