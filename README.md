@@ -65,7 +65,7 @@ pa
 - [x] sorting algo (under five, radix_sort, custom_sort)
 - [ ] bonus (checker) (segv on 0 line on standart input, else heap-buffer-overflow, need to check if stack_a is sorted and stack_b clean)
 - [x] leaks
-- [x] norm
+- [ ] norm
 
 ## Tester :
 
