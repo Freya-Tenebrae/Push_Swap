@@ -34,6 +34,8 @@ make
 
 ### Exemple of uses
 
+#### push_swap
+
 ```shell
 ./push_swap 1 2 3 4 five 6 8 7
 Error
@@ -56,9 +58,14 @@ pa
 pa
 ```
 
+#### checker
+
+ctrl+d is life :3
+
 ## TODO List
 
-- [ ] bonus : permettre de faire manuellement un test pour verifier le checker :3
+- [ ] bonus : si les actions n'existent pas return "error" --> fin du programme a la lecture
+- [ ] bonus : si les resultats ne sont pas de format <action>\n return "error" --> fin du programme a la lecture
 
 ## Tester :
 
