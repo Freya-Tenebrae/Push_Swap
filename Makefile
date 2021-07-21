@@ -6,7 +6,7 @@
 #    By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/14 23:11:43 by cmaginot          #+#    #+#              #
-#    Updated: 2021/07/20 16:11:40 by cmaginot         ###   ########.fr        #
+#    Updated: 2021/07/21 14:27:19 by cmaginot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ SRCS=$(addprefix ${FOLDER}/, \
 SRCS_BONUS=$(addprefix ${FOLDER}/, \
 	ft_main_bonus.c \
 	ft_push_swap_bonus.c \
+	ft_tools_bonus.c \
 	ft_tools_memory_and_access_stacks.c \
 	ft_tools_push.c \
 	ft_tools_rotate.c \

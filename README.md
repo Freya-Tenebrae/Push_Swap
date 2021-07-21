@@ -56,16 +56,9 @@ pa
 pa
 ```
 
-## Avancement / Advancement
+## TODO List
 
-- [x] parsing atguments (from n int or one string)
-- [x] error management (is not a int, same number twice, over int max or under int min)
-- [x] checking if already sorted
-- [x] tools (push, swap, rotate, reverse rotate)
-- [x] sorting algo (under five, radix_sort, custom_sort)
-- [ ] bonus (checker) (segv on 0 line on standart input, else heap-buffer-overflow)
-- [x] leaks
-- [ ] norm
+- [ ] bonus : permettre de faire manuellement un test pour verifier le checker :3
 
 ## Tester :
 

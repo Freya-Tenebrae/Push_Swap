@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 13:09:07 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/07/20 16:12:12 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/21 14:24:29 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,8 @@ int	main(int argc, const char **argv)
 	unsigned int	size;
 	char			**strs;
 
+	if (argc == 1)
+		return (0);
 	if (ft_put_argv_in_strs(argc, &size, argv, &strs) == 0)
 	{
 		if (ft_check_is_all_num(size, strs) == 0)

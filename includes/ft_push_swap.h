@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 13:09:35 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/07/16 18:45:29 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/21 14:31:22 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,6 @@ void				ft_push_swap_order_radix_sort(t_stacks **stack_a, \
 						t_stacks **stack_b, unsigned int size);
 /* void				ft_push_swap_quick_sort(t_stacks **stack_a, \             */
 /*						t_stacks **stack_b, unsigned int size, int n);        */
-/* ************************************************************************** */
-/*                                   BONUS                                    */
-/* ************************************************************************** */
 /* ************************************************************************** */
 /*                                   TOOLS                                    */
 /* ************************************************************************** */
@@ -86,5 +83,7 @@ t_stacks			*ft_stack_new(int content);
 void				ft_stack_clear(t_stacks **stack);
 t_stacks			*ft_stack_last(t_stacks *stack);
 void				ft_stack_add_back(t_stacks **astack, t_stacks *new_stack);
+/* ****************************** BONUS Tools ******************************* */
+int					ft_fetch_actions(char ***standart_read);
 
 #endif
