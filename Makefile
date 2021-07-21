@@ -6,7 +6,7 @@
 #    By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/14 23:11:43 by cmaginot          #+#    #+#              #
-#    Updated: 2021/07/21 14:27:19 by cmaginot         ###   ########.fr        #
+#    Updated: 2021/07/21 15:09:14 by cmaginot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,9 +49,11 @@ CC=gcc -g
 CFLAGS=-Wall -Wextra -Werror -g3 -fsanitize=address
 RM=rm -f
 
-all: $(NAME) bonus
+all: $(NAME)
 
 bonus: $(NAME_BONUS)
+
+push_swap_and_checker: all bonus
 
 $(NAME): $(OBJS)
 	make -C $(LIBFT) bonus
@@ -76,3 +78,7 @@ fclean: clean
 	$(RM) $(NAME_BONUS)
 
 re: fclean all
+
+re_bonus: fclean bonus
+
+re_push_swap_and_checker: fclean all push_swap_and_checker
