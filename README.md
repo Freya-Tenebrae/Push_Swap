@@ -22,6 +22,10 @@ for push_swap :
 ```shell
 make push_swap
 ```
+or
+```shell
+make
+```
 for checker :
 ```shell
 make bonus
@@ -29,7 +33,7 @@ make bonus
 
 for both :
 ```shell
-make
+make push_swap_and_checker
 ```
 
 ### Exemple of uses
@@ -60,12 +64,52 @@ pa
 
 #### checker
 
-ctrl+d is life :3
+> don't forget to uses ctrl + d to stop input;
 
-## TODO List
-
-- [ ] bonus : si les actions n'existent pas return "error" --> fin du programme a la lecture
-- [ ] bonus : si les resultats ne sont pas de format <action>\n return "error" --> fin du programme a la lecture
+```shell
+./checker 1 2 3 4 five 6 8 7
+Error
+```
+```shell
+./checker 1 2 3 4 5 6 8 8
+Error
+```
+```shell
+./checker 2 3 1 5 4  
+   ra
+Error
+```
+```shell
+./checker 2 3 1 5 4  
+rrra
+Error
+```
+```shell
+./checker 2 3 1 5 4  
+KO
+```
+```shell
+./checker 2 3 1 5 4  
+ra
+pb
+sa
+rrr
+KO
+```
+```shell
+./checker 2 3 1 5 4  
+ra
+ra
+pb
+ra
+ra
+pb
+rra
+sa
+pa
+pa
+OK
+```
 
 ## Tester :
 
