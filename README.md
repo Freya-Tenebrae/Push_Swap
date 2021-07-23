@@ -110,7 +110,10 @@ pa
 pa
 OK
 ```
-
+```shell
+ARG="1 5 2 4 3";./push_swap $ARG|./checker $ARG
+OK
+```
 ## Tester :
 
 - [x] push_swap_tester(https://github.com/lmalki-h/push_swap_tester) by lmalki-h(https://github.com/lmalki-h)
