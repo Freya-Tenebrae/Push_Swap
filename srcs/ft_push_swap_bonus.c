@@ -106,13 +106,13 @@ int	ft_push_swap(t_stacks **stack_a, t_stacks **stack_b, unsigned int size, \
 			else
 				ft_putstr_fd("KO\n", 1);
 			ft_stack_clear(stack_a);
-			ft_freestrs(strs, 0);
-			ft_freestrs(&standart_read, 0);
+			ft_freestrs(strs);
+			ft_freestrs(&standart_read);
 			return (0);
 		}
 	}
 	ft_putstr_fd("Error\n", 2);
 	ft_stack_clear(stack_a);
-	ft_freestrs(strs, 0);
+	ft_freestrs(strs);
 	return (-1);
 }

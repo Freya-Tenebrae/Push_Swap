@@ -26,7 +26,7 @@ static int	ft_put_argv_in_strs_if_number(int argc, const char **argv, \
 		(*strs)[i] = ft_strdup(argv[i + 1]);
 		if (!(*strs)[i])
 		{
-			ft_freestrs(strs, i);
+			ft_freestrs(strs);
 			return (-1);
 		}
 	}
@@ -109,7 +109,7 @@ int	main(int argc, const char **argv)
 	unsigned int	size;
 	char			**strs;
 
-	if (argc == 1)
+	if (argc == 1 || (argc == 2 && ft_strcmp(argv[1], "") == 0))
 		return (0);
 	if (ft_put_argv_in_strs(argc, &size, argv, &strs) == 0)
 	{
@@ -120,7 +120,7 @@ int	main(int argc, const char **argv)
 			ft_stack_clear(&stack_a);
 		}
 	}
-	ft_freestrs(&strs, 0);
+	ft_freestrs(&strs);
 	ft_putstr_fd("Error\n", 2);
 	return (-1);
 }

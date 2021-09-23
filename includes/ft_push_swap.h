@@ -6,12 +6,13 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 13:09:35 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/07/21 14:31:22 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/09/21 16:28:26 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PUSH_SWAP_H
 # define FT_PUSH_SWAP_H
+
 /* ************************************************************************** */
 /*                                  INCLUDES                                  */
 /* ************************************************************************** */
@@ -19,6 +20,7 @@
 # include <limits.h>
 # include "libft/libft.h"
 # include "get_next_line/get_next_line_bonus.h"
+
 /* ************************************************************************** */
 /*                                  TYPEDEF                                   */
 /* ************************************************************************** */
@@ -78,7 +80,7 @@ void				ft_get_size_stacks(t_stacks *tmp_stack_a, \
 						t_stacks *tmp_stack_b, unsigned int *size_stack_a, \
 						unsigned int *size_stack_b);
 /* ************************** Memory & Access Tools ************************* */
-void				ft_freestrs(char ***strs, int i);
+void				ft_freestrs(char ***strs);
 t_stacks			*ft_stack_new(int content);
 void				ft_stack_clear(t_stacks **stack);
 t_stacks			*ft_stack_last(t_stacks *stack);

@@ -62,7 +62,7 @@ static int	ft_fetch_one_action(char ***standart_read, char ***tmp_stdin, \
 	*standart_read = malloc(sizeof(char **) * (*i + 1));
 	if (!*standart_read)
 	{
-		ft_freestrs(tmp_stdin, *i - 1);
+		ft_freestrs(tmp_stdin);
 		free(line);
 		return (-1);
 	}
@@ -92,7 +92,7 @@ int	ft_fetch_actions(char ***standart_read)
 		if (res_gnl == -1 || \
 			ft_check_if_action_is_correct(res_gnl, *standart_read) != 0)
 		{
-			ft_freestrs(standart_read, i);
+			ft_freestrs(standart_read);
 			return (-1);
 		}
 	}

@@ -6,18 +6,22 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 13:09:07 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/07/23 15:49:10 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/09/21 16:28:12 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_push_swap.h"
 
-void	ft_freestrs(char ***strs, int i)
+void	ft_freestrs(char ***strs)
 {
-	while (--i >= 0)
+	char	**strs_ptr;
+
+	strs_ptr = *strs;
+	while (*strs_ptr != NULL)
 	{
-		free((*strs)[i]);
-		(*strs)[i] = NULL;
+		free(*strs_ptr);
+		*strs_ptr = NULL;
+		strs_ptr++;
 	}
 	free(*strs);
 	*strs = NULL;
@@ -45,6 +49,7 @@ void	ft_stack_clear(t_stacks **stack)
 		while (*stack != NULL)
 		{
 			stacknext = (*stack)->next;
+			free((*stack));
 			*stack = stacknext;
 		}
 	}
